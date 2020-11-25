@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Circle = function (radius) {
+        this.radius = radius;
+        // xây dụng phương thức trả về bán kình
+        this.getRadius = function () {
+            return radius;
+        }
+        // xây dựng phương thức tính diện tích và chu vi b
+        this.getArea = function () {
+            return Math.pow(radius, 2) * Math.PI;
+        }
+    }
+        // sử dụng lớp vừa tạo tạo đối tượng hình tròn
+        let circel = new Circle(2);
+        // truy cập phương thức của hình tròn gán cho các biềns radius are
+        let r = circel.getRadius();
+        let area = circel.getArea();
+        alert("radius: "+r+"; area:"+ area);
+
+</script>
+</body>
+</html>
