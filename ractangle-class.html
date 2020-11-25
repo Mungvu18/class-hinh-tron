@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="300" height="300"></canvas>
+<script>
+    let Rectangle = function (width,length){
+        this.width = width;
+        this.length = length;
+        // xây dựng phương thức chả vể diện tích
+        this.getPerimeter = function (width,length){
+            return this.width*2+this.length*2;
+        }
+        this.getArea = function (width,length){
+            return this.width*this.length;
+        }
+    }
+    // khoi tao object rectangle
+    let rectangle1 = new Rectangle(400,500);
+    // rectangle1.getPerimeter(100,400);
+    // rectangle1.getArea(100,400);
+    rectangle1.width = 100;
+    rectangle1.length = 200;
+    let width = rectangle1.width;
+    let length = rectangle1.length;
+    console.log(width,length)
+    document.write('Dien tich la:'+rectangle1.getArea()+"<br>"+ "Chu vi la:"+rectangle1.getPerimeter())
+    function drawl(){
+        let c = document.getElementById('myCanvas');
+        let ctx = c.getContext('2d');
+        ctx.fillStyle = "#FF0000";
+        ctx.fillRect(0,0,width,length);
+        setTimeout("drawl();",5000);
+    }
+    drawl();
+
+</script>
+</body>
+</html>
